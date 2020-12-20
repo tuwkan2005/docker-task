@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+    admin:
+        image: tuwkan2005/admin-server:1
+        restart: always
+        ports:
+        -   9003:9003
+
+    client:
+        image: tuwkan2005/client-service:1
+        restart: always
+        ports:
+        -   8080:8080
+        depends_on:
+            -   admin
